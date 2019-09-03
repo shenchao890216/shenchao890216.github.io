@@ -387,7 +387,11 @@ body {
   margin-left: -15px;
 }
 .nav-icon,
-.main-nav-link {
+.main-nav-link,
+.weibo-link,
+.github-link,
+.zhihu-link,
+.tw-link {
   float: left;
   color: #fff;
   opacity: 0.6;
@@ -401,7 +405,11 @@ body {
   padding: 20px 15px;
 }
 .nav-icon:hover,
-.main-nav-link:hover {
+.main-nav-link:hover,
+.weibo-link:hover,
+.github-link:hover,
+.zhihu-link:hover,
+.tw-link:hover {
   opacity: 1;
 }
 .nav-icon {
@@ -443,6 +451,51 @@ body {
 }
 #nav-search-btn:before {
   content: "\f002";
+}
+.weibo-link {
+  padding: 20px 5px;
+  font-family: FontAwesome;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+.weibo-link:before {
+  content: "\f18a";
+}
+.github-link {
+  padding: 20px 5px;
+  margin-left: 10px;
+  font-family: FontAwesome;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+.github-link:before {
+  content: "\f113";
+}
+.zhihu-link {
+  padding: 20px 5px;
+  font-family: FontAwesome;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+.zhihu-link:before {
+  content: "\f63f";
+}
+.tw-link {
+  padding: 20px 5px;
+  font-family: FontAwesome;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+.tw-link:before {
+  content: "\f099";
 }
 #search-form-wrap {
   position: absolute;
@@ -1083,13 +1136,27 @@ a.article-title:hover {
 #footer a {
   color: #258fb8;
   text-decoration: none;
+  cursor: pointer;
 }
 #footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 #footer-info {
   line-height: 1.6em;
   font-size: 0.85em;
+}
+#footer-info ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .article-entry pre,
 .article-entry .highlight {
