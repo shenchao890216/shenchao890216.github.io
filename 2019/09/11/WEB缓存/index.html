@@ -5,15 +5,23 @@
   
 
   
-  <title>W3CTALK</title>
+  <title>WEB缓存 | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="W3CTALK">
-<meta property="og:url" content="http://w3ctalk.com/index.html">
+  <meta name="description" content="几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用 WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：  浏览器缓存并不仅仅是浏览器的事情 浏览器缓存通过headers传递的信息来控制  既然也叫H">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WEB缓存">
+<meta property="og:url" content="http://w3ctalk.com/2019/09/11/WEB缓存/index.html">
 <meta property="og:site_name" content="W3CTALK">
+<meta property="og:description" content="几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用 WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：  浏览器缓存并不仅仅是浏览器的事情 浏览器缓存通过headers传递的信息来控制  既然也叫H">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://w3ctalk.com/images/3.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/web-cache-00.jpg">
+<meta property="og:updated_time" content="2019-09-11T01:51:49.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W3CTALK">
+<meta name="twitter:title" content="WEB缓存">
+<meta name="twitter:description" content="几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用 WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：  浏览器缓存并不仅仅是浏览器的事情 浏览器缓存通过headers传递的信息来控制  既然也叫H">
+<meta name="twitter:image" content="http://w3ctalk.com/images/3.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -73,59 +81,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-tslearning1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/12/tslearning1/" class="article-date">
-  <time datetime="2019-09-12T02:08:52.000Z" itemprop="datePublished">2019-09-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/12/tslearning1/">TypeScript Learning 1 - 初始化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/4.jpg" alt></p>
-<p>TypeScript（后面都简称为ts）也不是什么新鲜的玩物，当初angular 1 到 angular 2，除了重新来过以外，就是和微软合作，首选ts。当初，没怎么理会这事，现在人们都开始推崇ts，作为一个还在靠前端吃饭的人，有必要系统的学习和使用一下，后面会一直把自己在这过程里学到的当成流水账记录下来。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/09/12/tslearning1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/12/tslearning1/" data-id="ck0g28qfa00064yoh6j208nt4" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/09/12/tslearning1/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-WEB缓存" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-WEB缓存" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/11/WEB缓存/" class="article-date">
   <time datetime="2019-09-11T12:48:34.000Z" itemprop="datePublished">2019-09-11</time>
@@ -142,8 +98,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/WEB缓存/">WEB缓存</a>
+    <h1 class="article-title" itemprop="name">
+      WEB缓存
     </h1>
   
 
@@ -164,11 +120,31 @@
 <h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>HTTP 1.1的产物，于Expries同在的时候，优先级高于Expries，有多个字段可以设置，比如：使用max-age可设置缓存最大的有效时间（单位：秒 ），<code>max-age=2592000</code>就是设置缓存<code>2592000秒[即30天]</code></p>
 <h3 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h3><p>服务器资源最后修改时间，需要和Cache-Control一起使用，是检查服务器资源是否更新的一种方式</p>
 <h3 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h3><p>根据实体内容生成的一段hash标识符，有服务端产生。浏览器会把这段字符串传回去，验证资源是否已修改，通过<code>Etag</code>和<code>Last-Modified</code>可以判断资源是否修改，由此判断是否返回状态304</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/09/11/WEB缓存/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+
+<p><img src="/images/web-cache-00.jpg" alt></p>
+<p>上面会这么几个状态码：</p>
+<ul>
+<li>200</li>
+<li>200 (from disk cache )</li>
+<li>200 (from memory cache)</li>
+<li>304</li>
+</ul>
+<p>人们把前三种情况称为强制缓存，把最后一种情况称为协商缓存</p>
+<h3 id="前端更新资源，防止缓存"><a href="#前端更新资源，防止缓存" class="headerlink" title="前端更新资源，防止缓存"></a>前端更新资源，防止缓存</h3><p>总得来说就是一个方案，将GET链接地址改变，是浏览器不走缓存，而是去请求，于是目前大多数的做法经历了下面几种：</p>
+<ul>
+<li><code>xxxx.js?v=time</code>用时间做版本控制</li>
+<li><code>xxxx.js?v=hash</code>用hash做版本控制，hash根据文件内容产生</li>
+<li><code>xxxx_hash.js</code>同上，但是版本控制在文件名上</li>
+</ul>
+<p>这几种方式都有自己的问题，时间版本容易把所有的资源重新来一遍，产生浪费，hash的版本控制容易在页面提前上线的情况下失效，最后一种hash版本控制，需要服务器增量发版，随着时间推移，服务器垃圾文件多，需要有一定的清理机制。</p>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><ol>
+<li>减少网络带宽消耗</li>
+<li>降低服务器压力</li>
+<li>减少网络延迟，加快页面打开速度</li>
+</ol>
+<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
+
       
     </div>
     <footer class="article-footer">
@@ -182,120 +158,35 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-记录下Object-create" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/09/记录下Object-create/" class="article-date">
-  <time datetime="2019-09-09T12:52:56.000Z" itemprop="datePublished">2019-09-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/09/12/tslearning1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          TypeScript Learning 1 - 初始化
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/记录下Object-create/">记录下Object.create</a>
-    </h1>
   
+    <a href="/2019/09/09/记录下Object-create/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">记录下Object.create</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/2.jpg" alt></p>
-<p><code>Object.create(null)</code>经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。</p>
-<blockquote>
-<p><code>Object.create(proto[, propertiesObject])</code>方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>  </p>
-<p>— <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create() - JavaScript | MDN</a>  </p>
-</blockquote>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>proto</code> : 新创建的对象的原型对象</p>
-<p><code>propertiesObject</code> : （可选）则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称，这些属性对应Object.defineProperties()的第二个参数</p>
-<p><em>注： 如果propertiesObject参数是 null 或非原始包装对象，则抛出一个 TypeError 异常</em></p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个新对象，带着指定的原型对象和属性</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/09/09/记录下Object-create/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck0g28qfb00074yoh26s7mtyy" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/09/09/记录下Object-create/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-  
-    <article id="post-start" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/14/start/" class="article-date">
-  <time datetime="2019-08-14T08:45:24.000Z" itemprop="datePublished">2019-08-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/杂谈/">杂谈</a>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/start/">简单明了</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/1.jpg" alt></p>
-<p>简单明了~</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/14/start/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/08/14/start/" data-id="ck0g28qf300024yohj8itoo1j" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/08/14/start/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂谈/">杂谈</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
+</section>
 </section>
         
           <aside id="sidebar">
@@ -425,11 +316,13 @@
 <script>
   var disqus_shortname = 'w3ctalk';
   
+  var disqus_url = 'http://w3ctalk.com/2019/09/11/WEB缓存/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
