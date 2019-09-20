@@ -5,21 +5,24 @@
   
 
   
-  <title>W3CTALK</title>
+  <title>async和defer之间的差异 | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本人菜鸡一个，就是给自己找个记录东西的地方 所以，不要有什么特别的期许…  这里主要写点前端[饭碗]、各种自己想学的技术[拼身体的就算了]、自己的一些随笔…">
-<meta property="og:type" content="website">
-<meta property="og:title" content="W3CTALK">
-<meta property="og:url" content="http://w3ctalk.com/about/index.html">
+  <meta name="description" content="没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行 有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成 有 async，">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async和defer之间的差异">
+<meta property="og:url" content="http://w3ctalk.com/2019/09/20/async-defer/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="本人菜鸡一个，就是给自己找个记录东西的地方 所以，不要有什么特别的期许…  这里主要写点前端[饭碗]、各种自己想学的技术[拼身体的就算了]、自己的一些随笔…">
+<meta property="og:description" content="没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行 有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成 有 async，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://w3ctalk.com/images/boring.gif">
-<meta property="og:updated_time" content="2019-09-03T09:28:39.479Z">
+<meta property="og:image" content="http://w3ctalk.com/images/8.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/async-defer-00.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/async-defer-01.png">
+<meta property="og:updated_time" content="2019-09-20T08:55:18.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="W3CTALK">
-<meta name="twitter:description" content="本人菜鸡一个，就是给自己找个记录东西的地方 所以，不要有什么特别的期许…  这里主要写点前端[饭碗]、各种自己想学的技术[拼身体的就算了]、自己的一些随笔…">
-<meta name="twitter:image" content="http://w3ctalk.com/images/boring.gif">
+<meta name="twitter:title" content="async和defer之间的差异">
+<meta name="twitter:description" content="没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行 有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成 有 async，">
+<meta name="twitter:image" content="http://w3ctalk.com/images/8.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -79,35 +82,78 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-async-defer" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2019-08-14T08:27:54.000Z" itemprop="datePublished">2019-08-14</time>
+    <a href="/2019/09/20/async-defer/" class="article-date">
+  <time datetime="2019-09-20T08:52:08.000Z" itemprop="datePublished">2019-09-20</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      async和defer之间的差异
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本人菜鸡一个，就是给自己找个记录东西的地方</p>
-<p>所以，不要有什么特别的期许…</p>
-<p><img src="/images/boring.gif" alt></p>
-<p>这里主要写点前端[饭碗]、各种自己想学的技术[拼身体的就算了]、自己的一些随笔…</p>
+        <p><img src="/images/8.jpg" alt></p>
+<ol>
+<li>没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行</li>
+<li>有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成</li>
+<li>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）</li>
+</ol>
+<p><img src="/images/async-defer-00.jpg" alt></p>
+<p><strong>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析</strong></p>
+<a id="more"></a>
+
+<p>此图告诉我们以下几个要点：</p>
+<ol>
+<li>defer 和 async 在网络读取（下载）这块儿是一样的，都是异步的（相较于 HTML 解析）</li>
+<li>它俩的差别在于脚本下载完之后何时执行，显然 defer 是最接近我们对于应用脚本加载和执行的要求的</li>
+<li>关于 defer，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用</li>
+<li>async 则是一个乱序执行的主，反正对它来说脚本的加载和执行是紧紧挨着的，所以不管你声明的顺序如何，只要它加载完了就会立刻执行</li>
+<li>仔细想想，async 对于应用脚本的用处不大，因为它完全不考虑依赖（哪怕是最低级的顺序执行），不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的，最典型的例子：Google Analytics</li>
+</ol>
+<p><strong>HTML5规范要求脚本执行应该按照脚本出现的先后顺序执行，但实际情况下，延迟脚本不一定按照先后顺序执行！！！</strong></p>
+<p><img src="/images/async-defer-01.png" alt></p>
+<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/about/index.html" data-id="ck0rw4acf0001s7ohp2rri6wt" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck0rw4acn0006s7ohhx6ug7uj" class="article-share-link">Share</a>
       
-        <a href="http://w3ctalk.com/about/index.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://w3ctalk.com/2019/09/20/async-defer/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/19/tslearning4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TypeScript Learning 4 - 看看类</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -250,7 +296,7 @@
 <script>
   var disqus_shortname = 'w3ctalk';
   
-  var disqus_url = 'http://w3ctalk.com/about/index.html';
+  var disqus_url = 'http://w3ctalk.com/2019/09/20/async-defer/';
   
   (function(){
     var dsq = document.createElement('script');
