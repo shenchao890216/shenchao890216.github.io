@@ -5,25 +5,22 @@
   
 
   
-  <title>你的高效来自于对精力的管理，而非时间 | W3CTALK</title>
+  <title>TypeScript Learning 6 - 类型检查 | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今年读书的时间并不多，都是非常零散的，以前读过了就是读过了，有时对一些书中的观点也会有些许共鸣，但过去了，啥都没有留下。所以，准备在这以后把自己读的书，做一些简单的记录，顺便算是对读的东西做个总结。总结是个好东西，现在越来越觉得，自己的脑子里都是点的概念，线的印象都少，面就更不用说 – 而面是在点之上最有价值的，也是自己一笔一笔画出来的，总结就是这个过程。  我们日常听到最多的是时间管理，不信">
-<meta name="keywords" content="读书,读书笔记">
+  <meta name="description" content="类型推论类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入let a = 3后，虽然我们没有注解a是一个number类型，但是ts自己会推断为a是一个number类型的变量。 当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。">
+<meta name="keywords" content="前端,TypeScript Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你的高效来自于对精力的管理，而非时间">
-<meta property="og:url" content="http://w3ctalk.com/2019/09/21/thefullengagement/index.html">
+<meta property="og:title" content="TypeScript Learning 6 - 类型检查">
+<meta property="og:url" content="http://w3ctalk.com/2019/09/24/tslearning6/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="今年读书的时间并不多，都是非常零散的，以前读过了就是读过了，有时对一些书中的观点也会有些许共鸣，但过去了，啥都没有留下。所以，准备在这以后把自己读的书，做一些简单的记录，顺便算是对读的东西做个总结。总结是个好东西，现在越来越觉得，自己的脑子里都是点的概念，线的印象都少，面就更不用说 – 而面是在点之上最有价值的，也是自己一笔一笔画出来的，总结就是这个过程。  我们日常听到最多的是时间管理，不信">
+<meta property="og:description" content="类型推论类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入let a = 3后，虽然我们没有注解a是一个number类型，但是ts自己会推断为a是一个number类型的变量。 当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://w3ctalk.com/images/jingliguanli/jingliguanli-00.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/jingliguanli/jingliguanli-01.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/jingliguanli/jingliguanli-02.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/jingliguanli/jingliguanli-03.jpg">
-<meta property="og:updated_time" content="2019-09-24T01:48:01.171Z">
+<meta property="og:image" content="http://w3ctalk.com/images/10.jpg">
+<meta property="og:updated_time" content="2019-09-24T05:38:33.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你的高效来自于对精力的管理，而非时间">
-<meta name="twitter:description" content="今年读书的时间并不多，都是非常零散的，以前读过了就是读过了，有时对一些书中的观点也会有些许共鸣，但过去了，啥都没有留下。所以，准备在这以后把自己读的书，做一些简单的记录，顺便算是对读的东西做个总结。总结是个好东西，现在越来越觉得，自己的脑子里都是点的概念，线的印象都少，面就更不用说 – 而面是在点之上最有价值的，也是自己一笔一笔画出来的，总结就是这个过程。  我们日常听到最多的是时间管理，不信">
-<meta name="twitter:image" content="http://w3ctalk.com/images/jingliguanli/jingliguanli-00.jpg">
+<meta name="twitter:title" content="TypeScript Learning 6 - 类型检查">
+<meta name="twitter:description" content="类型推论类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入let a = 3后，虽然我们没有注解a是一个number类型，但是ts自己会推断为a是一个number类型的变量。 当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。">
+<meta name="twitter:image" content="http://w3ctalk.com/images/10.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -83,14 +80,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-thefullengagement" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-tslearning6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/21/thefullengagement/" class="article-date">
-  <time datetime="2019-09-21T05:18:03.000Z" itemprop="datePublished">2019-09-21</time>
+    <a href="/2019/09/24/tslearning6/" class="article-date">
+  <time datetime="2019-09-24T05:36:14.000Z" itemprop="datePublished">2019-09-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/读书/">读书</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
   </div>
@@ -101,7 +98,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      你的高效来自于对精力的管理，而非时间
+      TypeScript Learning 6 - 类型检查
     </h1>
   
 
@@ -109,43 +106,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/jingliguanli/jingliguanli-00.jpg" alt></p>
-<blockquote>
-<p>今年读书的时间并不多，都是非常零散的，以前读过了就是读过了，有时对一些书中的观点也会有些许共鸣，但过去了，啥都没有留下。所以，准备在这以后把自己读的书，做一些简单的记录，顺便算是对读的东西做个总结。总结是个好东西，现在越来越觉得，自己的脑子里都是点的概念，线的印象都少，面就更不用说 – 而面是在点之上最有价值的，也是自己一笔一笔画出来的，总结就是这个过程。</p>
-</blockquote>
-<p>我们日常听到最多的是时间管理，不信你可以看看市面上充满了各种提醒和TODO的应用。这没有什么错误，毕竟时间有限，但到了这个时间点你真的能把这个事情能做好吗？比如，早晨10点有个重要的会议，但会议持续4个小时之久，你能认真听这个会议多久？再比如，我们下午4点的时候突然会感觉身体被掏空，工作突然效率异常低效，这又为什么呢？因为我们的精力耗尽，我们该补充“弹药”了！</p>
-<p>《精力管理》的核心观点：精力，而非时间，是高效能的基础！</p>
-<p>要想全方位投入，我们必须在体能上精力充沛，在感情上相互联系，在思想上集中，在精神上和超越我们眼前私利的目的保持一致。</p>
+        <p><img src="/images/10.jpg" alt></p>
+<h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><p>类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入<code>let a = 3</code>后，虽然我们没有注解<code>a</code>是一个<code>number</code>类型，但是ts自己会推断为<code>a</code>是一个<code>number</code>类型的变量。</p>
+<p>当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。</p>
 <a id="more"></a>
 
-<p>精力是什么？</p>
-<p>精力就是做成事情的能力，它源于四个方面：体能、情感、思维、意志。</p>
-<p><img src="/images/jingliguanli/jingliguanli-01.jpg" alt></p>
-<p>书的结构很简单，有一种总-分-分的感觉。先是总结精力管理的四项基本原则和训练的三个步骤，接着详细介绍这几个方面具体内容。每章前，都有相应的思维导图，一眼能看到作者本章要介绍的重点，章的结尾还会在把基本的要点做个基本的总结。最后，书的附录也提供相应的表格，供读者使用，两个字：体贴。</p>
-<p><img src="/images/jingliguanli/jingliguanli-02.jpg" alt></p>
-<p>我本人对书中的很多观点表示赞同，比如体力一部分，结合我自己的经历，工作日的下午四点，是体力最低的时候，这时感觉什么都坐不下去，如果适当的摄入能力，稍微放松并调整下自己，效率会重新返回。</p>
-<p>再者，如目标阶段，我一度很少给自己定一个目标（无论人生这样大的目标，还是每天要做的小的目标），没有目标的结果就如无头苍蝇，到处乱撞。</p>
-<p><img src="/images/jingliguanli/jingliguanli-03.jpg" alt></p>
-<p>书中以互联网公司销售经理罗杰为样例</p>
+<h3 id="类型兼容"><a href="#类型兼容" class="headerlink" title="类型兼容"></a>类型兼容</h3><p>类型兼容总的来说就是在遇到两个变量互相赋值（包括函数传参）时，二者的兼容性。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = &#123;</span><br><span class="line">  name: <span class="string">'scrd'</span>,</span><br><span class="line">  age: <span class="number">19</span>,</span><br><span class="line">  married: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b能赋值给a.</span></span><br><span class="line">a = b</span><br><span class="line"><span class="comment">// a不能赋值给b,会报错.</span></span><br><span class="line">b = a <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+
+<p>情况比较多，没必要一一列举，请自查文档，总结就是：</p>
 <blockquote>
-<p>罗杰 42岁，风华正茂，是一家大型软件公司的销售经理， 6年中 4次升迁，家庭也幸福美满。可现在却有 5个基本障碍困扰着他：精力低下，焦躁，消极，人际关系淡薄，还缺乏激情。工作中一封接一封的电子邮件，一个接一个的指标，一件接一件的危机处理让他身心俱疲，专注力也日渐恶化  </p>
+<p>结构兼容：成员少的兼容成员多的<br>函数兼容：参数多的兼容参数少的  </p>
 </blockquote>
-<p>当然后面的情况都是这位经理所不愿承认的，而书中也是提到，所有这些都最终落实在行动上，如果我们只是一直停留在理论上，没有行动去改变，这些也将无意义。</p>
-<p>总的来说，这本书更像一本工具书，让你自己关注怎样才能高效，让自己更顺利，建议买本纸质的，略读~</p>
-<p>最后引用书中的一句话：</p>
-<blockquote>
-<p>时势造英雄，不管是工作还是婚姻，作为父母还是子女，很少有人愿意甘于平庸，因为平庸低于我们对自己的要求;<br>不幸的是，多数人从未踏上过英雄征途。原因说起来简单却令人难堪：我们太过忙碌，无暇追寻生命的意义;  </p>
-</blockquote>
+<h3 id="类型保护"><a href="#类型保护" class="headerlink" title="类型保护"></a>类型保护</h3><p>主要在使用联合类型时使用到，比如下面的代码，为了能够使用，我们用了好多类型断言：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pet = getSmallPet()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ((&lt;Fish&gt;pet).swim) &#123;</span><br><span class="line">    (&lt;Fish&gt;pet).swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    (&lt;Bird&gt;pet).fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时，我们用一段代码来去掉这些断言：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFish</span>(<span class="params">pet: Fish | Bird</span>): <span class="title">pet</span> <span class="title">is</span> <span class="title">Fish</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (&lt;Fish&gt;pet).swim !== <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的代码使用如下，这就是类型保护.</span></span><br><span class="line"><span class="keyword">if</span> (isFish(pet)) &#123;</span><br><span class="line">    pet.swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    pet.fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类型保护有四种方法：</p>
+<ul>
+<li>用户自定义的类型保护</li>
+<li>typeof类型保护</li>
+<li>instanceof类型保护</li>
+<li>？</li>
+</ul>
+<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/21/thefullengagement/" data-id="ck0xetpvd0007u8ohmy4n6vyj" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck0xetpvs000ou8ohmsjm2otp" class="article-share-link">Share</a>
       
-        <a href="http://w3ctalk.com/2019/09/21/thefullengagement/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://w3ctalk.com/2019/09/24/tslearning6/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书/">读书</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </footer>
   </div>
@@ -153,19 +149,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/23/tslearning5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          TypeScript Learning 5 - 泛型
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/20/async-defer/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/23/tslearning5/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">async和defer之间的差异</div>
+      <div class="article-nav-title">TypeScript Learning 5 - 泛型</div>
     </a>
   
 </nav>
@@ -312,7 +299,7 @@
 <script>
   var disqus_shortname = 'w3ctalk';
   
-  var disqus_url = 'http://w3ctalk.com/2019/09/21/thefullengagement/';
+  var disqus_url = 'http://w3ctalk.com/2019/09/24/tslearning6/';
   
   (function(){
     var dsq = document.createElement('script');
