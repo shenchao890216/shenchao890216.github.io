@@ -15,12 +15,13 @@
 <meta property="og:site_name" content="W3CTALK">
 <meta property="og:description" content="类型推论类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入let a = 3后，虽然我们没有注解a是一个number类型，但是ts自己会推断为a是一个number类型的变量。 当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://w3ctalk.com/images/10.jpg">
-<meta property="og:updated_time" content="2019-09-24T05:38:33.668Z">
+<meta property="og:image" content="http://w3ctalk.com/images/banner/10.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/fine/0001.jpg">
+<meta property="og:updated_time" content="2019-09-25T01:25:09.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript Learning 6 - 类型检查">
 <meta name="twitter:description" content="类型推论类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入let a = 3后，虽然我们没有注解a是一个number类型，但是ts自己会推断为a是一个number类型的变量。 当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。">
-<meta name="twitter:image" content="http://w3ctalk.com/images/10.jpg">
+<meta name="twitter:image" content="http://w3ctalk.com/images/banner/10.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -106,7 +107,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/10.jpg" alt></p>
+        <p><img src="/images/banner/10.jpg" alt></p>
 <h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><p>类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入<code>let a = 3</code>后，虽然我们没有注解<code>a</code>是一个<code>number</code>类型，但是ts自己会推断为<code>a</code>是一个<code>number</code>类型的变量。</p>
 <p>当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。</p>
 <a id="more"></a>
@@ -118,25 +119,27 @@
 <blockquote>
 <p>结构兼容：成员少的兼容成员多的<br>函数兼容：参数多的兼容参数少的  </p>
 </blockquote>
-<h3 id="类型保护"><a href="#类型保护" class="headerlink" title="类型保护"></a>类型保护</h3><p>主要在使用联合类型时使用到，比如下面的代码，为了能够使用，我们用了好多类型断言：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pet = getSmallPet()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ((&lt;Fish&gt;pet).swim) &#123;</span><br><span class="line">    (&lt;Fish&gt;pet).swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    (&lt;Bird&gt;pet).fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类型保护"><a href="#类型保护" class="headerlink" title="类型保护"></a>类型保护</h3><p>主要在使用联合类型时使用到，在ts特定区块保证变量属于某种确定的类型，比如下面的代码，为了能够使用，我们用了好多类型断言：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pet = getSmallPet()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ((&lt;Fish&gt;pet).swim) &#123;</span><br><span class="line">  (&lt;Fish&gt;pet).swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  (&lt;Bird&gt;pet).fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这时，我们用一段代码来去掉这些断言：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFish</span>(<span class="params">pet: Fish | Bird</span>): <span class="title">pet</span> <span class="title">is</span> <span class="title">Fish</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (&lt;Fish&gt;pet).swim !== <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的代码使用如下，这就是类型保护.</span></span><br><span class="line"><span class="keyword">if</span> (isFish(pet)) &#123;</span><br><span class="line">    pet.swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    pet.fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFish</span>(<span class="params">pet: Fish | Bird</span>): <span class="title">pet</span> <span class="title">is</span> <span class="title">Fish</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (&lt;Fish&gt;pet).swim !== <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的代码使用如下，这就是类型保护.</span></span><br><span class="line"><span class="keyword">if</span> (isFish(pet)) &#123;</span><br><span class="line">  pet.swim()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  pet.fly()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>类型保护有四种方法：</p>
 <ul>
 <li>用户自定义的类型保护</li>
 <li>typeof类型保护</li>
 <li>instanceof类型保护</li>
-<li>？</li>
+<li>in类型保护</li>
 </ul>
 <p><strong>欢迎留言讨论 ^_^ ~</strong></p>
+<p><img src="/images/fine/0001.jpg" alt></p>
+<p><em>生不如猫系列</em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck0xetpvs000ou8ohmsjm2otp" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck11p7ddc000oros6z2322e63" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/24/tslearning6/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -148,6 +151,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/09/25/tslearning7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TypeScript Learning 7 - 高级类型
+        
+      </div>
+    </a>
   
   
     <a href="/2019/09/23/tslearning5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -216,6 +228,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/25/tslearning7/">TypeScript Learning 7 - 高级类型</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/24/tslearning6/">TypeScript Learning 6 - 类型检查</a>
           </li>
         
@@ -229,10 +245,6 @@
         
           <li>
             <a href="/2019/09/20/async-defer/">async和defer之间的差异</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/tslearning4/">TypeScript Learning 4 - 看看类</a>
           </li>
         
       </ul>

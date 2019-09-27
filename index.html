@@ -75,6 +75,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-tslearning7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/25/tslearning7/" class="article-date">
+  <time datetime="2019-09-25T14:29:18.000Z" itemprop="datePublished">2019-09-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/25/tslearning7/">TypeScript Learning 7 - 高级类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/11.jpg" alt></p>
+<h3 id="交叉类型"><a href="#交叉类型" class="headerlink" title="交叉类型"></a>交叉类型</h3><p>字面理解是取类型的两个交集，而实际是取两个类型的并集，例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> DogInterface &#123;</span><br><span class="line">  run(): <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> CatInterface &#123;</span><br><span class="line">  eat(): <span class="built_in">void</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> pet: DogInterface &amp; CatInterface = &#123;</span><br><span class="line">  run() &#123;&#125;,</span><br><span class="line">  eat() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/25/tslearning7/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/09/25/tslearning7/" data-id="ck11p7dde000uros6s52e4rtx" class="article-share-link">Share</a>
+      
+        <a href="http://w3ctalk.com/2019/09/25/tslearning7/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tslearning6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/24/tslearning6/" class="article-date">
@@ -101,7 +152,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/10.jpg" alt></p>
+        <p><img src="/images/banner/10.jpg" alt></p>
 <h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><p>类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入<code>let a = 3</code>后，虽然我们没有注解<code>a</code>是一个<code>number</code>类型，但是ts自己会推断为<code>a</code>是一个<code>number</code>类型的变量。</p>
 <p>当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。</p>
         
@@ -112,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck0xetpvs000ou8ohmsjm2otp" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck11p7ddc000oros6z2322e63" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/24/tslearning6/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -152,7 +203,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/9.jpg" alt></p>
+        <p><img src="/images/banner/9.jpg" alt></p>
 <p>泛型从字面理解，就是宽泛类型的约束。官文中写的是对组件的复用、扩展的体现，因为一个组件不可能只支持现有的数据，还要考虑支持未来的新数据。在使用过程中，泛型也简化了函数重载，对js这种函数天生就是重载的语言来说，ts的重载看着就麻烦~</p>
 <p><img src="/images/tslearning5-00.jpg" alt></p>
         
@@ -163,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/23/tslearning5/" data-id="ck0xetpvp000ku8oho24vlvbv" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/23/tslearning5/" data-id="ck11p7dda000kros6chvnxu96" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/23/tslearning5/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -218,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/21/thefullengagement/" data-id="ck0xetpvd0007u8ohmy4n6vyj" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/21/thefullengagement/" data-id="ck11p7dd10007ros6m8znpwsb" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/21/thefullengagement/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -258,7 +309,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/8.jpg" alt></p>
+        <p><img src="/images/banner/8.jpg" alt></p>
 <ol>
 <li>没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行</li>
 <li>有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成</li>
@@ -274,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck0xetpv60002u8oh6xizt0yq" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck11p7dcq0000ros6l75cw4f5" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/20/async-defer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -314,7 +365,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/7.jpg" alt></p>
+        <p><img src="/images/banner/7.jpg" alt></p>
 <p>ts中的类基本符合ES6中的类，只是加了怎样对其中的类型检查，大概的点如下：</p>
 <p><img src="/images/tslearning4-00.jpg" alt></p>
         
@@ -325,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck0xetpvi000cu8ohxkcp6l85" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck11p7dd8000iros6syk4zbou" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/19/tslearning4/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -365,7 +416,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/6.jpg" alt></p>
+        <p><img src="/images/banner/6.jpg" alt></p>
 <p>接口就是对值所具有的数据结构的一种约束，有了这种约束，ts才能对值的相应类型做相应的检查。这种约束主要针对的是对象、函数、类等。    </p>
 <p><strong>接口在运行时的影响为0</strong></p>
 <h3 id="接口初探"><a href="#接口初探" class="headerlink" title="接口初探"></a>接口初探</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck0xetpvf0008u8ohqstxw8zf" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck11p7dd6000dros6xq930und" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/18/tslearning3/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -420,7 +471,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/5.jpg" alt></p>
+        <p><img src="/images/banner/5.jpg" alt></p>
 <blockquote>
 <p>TypeScript是JavaScript的超集，涵盖了JS的所有的语法和语义，最大作用就是进行静态类型检查，配合相应的编辑器能够进行更好的静态分析，所以TS的学习一大部分就是学习怎么限定开发中相应的类型  </p>
 </blockquote>
@@ -437,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/16/tslearning2/" data-id="ck0xetpvk000du8ohbknbtrp2" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/16/tslearning2/" data-id="ck11p7dd5000cros6qw3zu7z3" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/16/tslearning2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -477,7 +528,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/4.jpg" alt></p>
+        <p><img src="/images/banner/4.jpg" alt></p>
 <p>TypeScript（后面都简称为ts）也不是什么新鲜的玩物，当初angular 1 到 angular 2，除了重新来过以外，就是和微软合作，首选ts。当初，没怎么理会这事，现在人们都开始推崇ts，作为一个还在靠前端吃饭的人，有必要系统的学习和使用一下，后面会一直把自己在这过程里学到的当成流水账记录下来。</p>
         
           <p class="article-more-link">
@@ -487,7 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/12/tslearning1/" data-id="ck0xetpvn000iu8ohn607c6zj" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/12/tslearning1/" data-id="ck11p7dd20008ros6cns6beeg" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/12/tslearning1/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -527,7 +578,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/3.jpg" alt></p>
+        <p><img src="/images/banner/3.jpg" alt></p>
 <p>几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用</p>
 <p>WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：</p>
 <ul>
@@ -548,70 +599,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/11/WEB缓存/" data-id="ck0xetpuz0000u8ohcumkukgv" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/11/WEB缓存/" data-id="ck11p7dcv0002ros6zujjs9a8" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/11/WEB缓存/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-记录下Object-create" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/09/记录下Object-create/" class="article-date">
-  <time datetime="2019-09-09T12:52:56.000Z" itemprop="datePublished">2019-09-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/记录下Object-create/">记录下Object.create</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/2.jpg" alt></p>
-<p><code>Object.create(null)</code>经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。</p>
-<blockquote>
-<p><code>Object.create(proto[, propertiesObject])</code>方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>  </p>
-<p>— <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create() - JavaScript | MDN</a>  </p>
-</blockquote>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>proto</code> : 新创建的对象的原型对象</p>
-<p><code>propertiesObject</code> : （可选）则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称，这些属性对应Object.defineProperties()的第二个参数</p>
-<p><em>注： 如果propertiesObject参数是 null 或非原始包装对象，则抛出一个 TypeError 异常</em></p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个新对象，带着指定的原型对象和属性</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/09/09/记录下Object-create/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck0xetpvt000ru8ohk7zcyvya" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/09/09/记录下Object-create/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -677,6 +670,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/25/tslearning7/">TypeScript Learning 7 - 高级类型</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/24/tslearning6/">TypeScript Learning 6 - 类型检查</a>
           </li>
         
@@ -690,10 +687,6 @@
         
           <li>
             <a href="/2019/09/20/async-defer/">async和defer之间的差异</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/tslearning4/">TypeScript Learning 4 - 看看类</a>
           </li>
         
       </ul>
