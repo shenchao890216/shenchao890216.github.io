@@ -75,6 +75,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WEB缓存" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/11/WEB缓存/" class="article-date">
+  <time datetime="2019-09-11T12:48:34.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/11/WEB缓存/">WEB缓存</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/3.jpg" alt></p>
+<p>几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用</p>
+<p>WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：</p>
+<ul>
+<li><em>浏览器缓存并不仅仅是浏览器的事情</em></li>
+<li><em>浏览器缓存通过headers传递的信息来控制</em></li>
+</ul>
+<p>既然也叫HTTP缓存就少不了和HTTP相关报文有关，下面是几个相关报文字段：</p>
+<h3 id="Expries"><a href="#Expries" class="headerlink" title="Expries"></a>Expries</h3><p>HTTP 1.0的产物，用来告诉浏览器这个资源过期的时间，如果发现没有超出这个时间，就返回200 (from disk cache / from memory cache)</p>
+<p><em>注：因为这个时间指的是服务器的时间，如果本地时间和服务器时间不吻合，将会导致缓存失效</em></p>
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>HTTP 1.1的产物，于Expries同在的时候，优先级高于Expries，有多个字段可以设置，比如：使用max-age可设置缓存最大的有效时间（单位：秒 ），<code>max-age=2592000</code>就是设置缓存<code>2592000秒[即30天]</code></p>
+<h3 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h3><p>服务器资源最后修改时间，需要和Cache-Control一起使用，是检查服务器资源是否更新的一种方式</p>
+<h3 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h3><p>根据实体内容生成的一段hash标识符，有服务端产生。浏览器会把这段字符串传回去，验证资源是否已修改，通过<code>Etag</code>和<code>Last-Modified</code>可以判断资源是否修改，由此判断是否返回状态304</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/11/WEB缓存/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/09/11/WEB缓存/" data-id="ck14rzmm400001xoh1xx9hp3z" class="article-share-link">Share</a>
+      
+        <a href="http://w3ctalk.com/2019/09/11/WEB缓存/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-记录下Object-create" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/09/记录下Object-create/" class="article-date">
@@ -119,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck14pm7s6000uwvohoet08dfh" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck14rzmmz000x1xoh9e0o4lp5" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/09/记录下Object-create/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -169,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/08/14/start/" data-id="ck14pm7rp0006wvohelkh5e31" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/08/14/start/" data-id="ck14rzmmf00061xoh9oe1i3u6" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/08/14/start/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -208,7 +269,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书/">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书/">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
   </div>
 
@@ -218,7 +279,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/TypeScript-Learning/" style="font-size: 15px;">TypeScript Learning</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/读书/" style="font-size: 10px;">读书</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/TypeScript-Learning/" style="font-size: 15px;">TypeScript Learning</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/读书/" style="font-size: 10px;">读书</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
     </div>
   </div>
 
@@ -240,6 +301,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/29/designMode/">网页可编辑模式</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/25/tslearning7/">TypeScript Learning 7 - 高级类型</a>
           </li>
         
@@ -253,10 +318,6 @@
         
           <li>
             <a href="/2019/09/21/thefullengagement/">你的高效来自于对精力的管理，而非时间</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/20/async-defer/">async和defer之间的差异</a>
           </li>
         
       </ul>
