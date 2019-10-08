@@ -75,6 +75,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-arrayremoveduplicates" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/08/arrayremoveduplicates/" class="article-date">
+  <time datetime="2019-10-08T05:36:22.000Z" itemprop="datePublished">2019-10-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/arrayremoveduplicates/">数组去重的一些记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/14.jpg" alt></p>
+<blockquote>
+<p>多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~  </p>
+</blockquote>
+<h3 id="使用Set"><a href="#使用Set" class="headerlink" title="使用Set"></a>使用Set</h3><p><code>Set</code>是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。</p>
+<p><code>Set</code>实际是一个构造函数，用来生成<code>Set</code>，我们可以传入一个数组来生成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test1 = &#123; <span class="attr">name</span>: <span class="string">'test1'</span>&#125;</span><br><span class="line"><span class="keyword">let</span> test2 = test1</span><br><span class="line"><span class="keyword">let</span> test3 = &#123; <span class="attr">name</span>: <span class="string">'test3'</span> &#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">'🙄'</span>, <span class="string">'🙄'</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">'1'</span>, test1, test3, test2]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成set.</span></span><br><span class="line"><span class="keyword">let</span> arrSet = <span class="keyword">new</span> <span class="built_in">Set</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<p>再把<code>Set</code>变回数组有两种办法：</p>
+<ol>
+<li>一种是利用<code>Array.from</code></li>
+<li>一种是<code>...</code>解构</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr)))</span><br><span class="line"><span class="comment">// 第二种.</span></span><br><span class="line"><span class="built_in">console</span>.log([...new <span class="built_in">Set</span>(arr)])</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/arrayremoveduplicates/arrayremoveduplicates-00.jpg" alt></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/08/arrayremoveduplicates/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/10/08/arrayremoveduplicates/" data-id="ck1hg6biw00004ms6s65u7mnf" class="article-share-link">Share</a>
+      
+        <a href="http://w3ctalk.com/2019/10/08/arrayremoveduplicates/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jsmularrow" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/30/jsmularrow/" class="article-date">
@@ -122,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/30/jsmularrow/" data-id="ck166li6o0007zps660av4zmb" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/30/jsmularrow/" data-id="ck1hg6bjc000c4ms6yx7h4idk" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/30/jsmularrow/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -175,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/29/designMode/" data-id="ck166li6n0006zps6wh25cynh" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/29/designMode/" data-id="ck1hg6bj200024ms6neufgtx2" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/29/designMode/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -226,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/25/tslearning7/" data-id="ck166li75000yzps6vebc32yn" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/25/tslearning7/" data-id="ck1hg6bjq00104ms64s9v0vz7" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/25/tslearning7/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -277,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck166li74000vzps60kvjrphw" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ck1hg6bjp000x4ms69z2f97c9" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/24/tslearning6/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -328,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/23/tslearning5/" data-id="ck166li73000rzps6fvatx6rt" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/23/tslearning5/" data-id="ck1hg6bjs00134ms635e2pcng" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/23/tslearning5/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -383,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/21/thefullengagement/" data-id="ck166li6t000czps6sehdkyun" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/21/thefullengagement/" data-id="ck1hg6bjk000l4ms619vvbetr" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/21/thefullengagement/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -439,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck166li6i0002zps69rcwpnok" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck1hg6bj700064ms6yldce5lk" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/20/async-defer/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -490,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck166li72000pzps6fvaeox0o" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck1hg6bjo000s4ms6wk1q5f3d" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/19/tslearning4/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -545,66 +609,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck166li6z000lzps6k4s533vb" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck1hg6bjn000p4ms6upoutaxs" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/18/tslearning3/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tslearning2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/16/tslearning2/" class="article-date">
-  <time datetime="2019-09-16T08:26:36.000Z" itemprop="datePublished">2019-09-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/16/tslearning2/">TypeScript Learning 2 - 打个照面</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/banner/5.jpg" alt></p>
-<blockquote>
-<p>TypeScript是JavaScript的超集，涵盖了JS的所有的语法和语义，最大作用就是进行静态类型检查，配合相应的编辑器能够进行更好的静态分析，所以TS的学习一大部分就是学习怎么限定开发中相应的类型  </p>
-</blockquote>
-<h3 id="ES6和TS的数据类型比较"><a href="#ES6和TS的数据类型比较" class="headerlink" title="ES6和TS的数据类型比较"></a>ES6和TS的数据类型比较</h3><p>ES6拥有的数据类型有Boolean、Number、String、Array、Function、Object、Symbol、undefined、null，ts除了ES6原有的数据类型以外，还增加了void、any、never、元组、枚举、高级类型。</p>
-<h3 id="类型注解"><a href="#类型注解" class="headerlink" title="类型注解"></a>类型注解</h3><p>TypeScript里的类型注解是一种轻量级的为函数或变量添加约束的方式，作用相当于强类型语言中的类型声明</p>
-<blockquote>
-<p>语法：（变量/函数）： type  </p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/09/16/tslearning2/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/16/tslearning2/" data-id="ck166li6x000jzps6hw7tt0eh" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/09/16/tslearning2/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
@@ -660,7 +667,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
     </div>
   </div>
 
@@ -671,6 +678,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/08/arrayremoveduplicates/">数组去重的一些记录</a>
+          </li>
         
           <li>
             <a href="/2019/09/30/jsmularrow/">JS中的多个连续函数和柯里化</a>
@@ -686,10 +697,6 @@
         
           <li>
             <a href="/2019/09/24/tslearning6/">TypeScript Learning 6 - 类型检查</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/23/tslearning5/">TypeScript Learning 5 - 泛型</a>
           </li>
         
       </ul>
