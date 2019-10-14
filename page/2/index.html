@@ -75,6 +75,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-async-defer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/20/async-defer/" class="article-date">
+  <time datetime="2019-09-20T08:52:08.000Z" itemprop="datePublished">2019-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/20/async-defer/">async和defer之间的差异</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/8.jpg" alt></p>
+<ol>
+<li>没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行</li>
+<li>有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成</li>
+<li>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）</li>
+</ol>
+<p><img src="/images/async-defer-00.jpg" alt></p>
+<p><strong>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/20/async-defer/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/09/20/async-defer/" data-id="ck1qjxl6g0006sgoh2x5riyp9" class="article-share-link">Share</a>
+      
+        <a href="http://w3ctalk.com/2019/09/20/async-defer/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tslearning4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/19/tslearning4/" class="article-date">
@@ -112,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck1kb2i9b001e0uoh2ldwcxsz" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/19/tslearning4/" data-id="ck1qjxl720011sgohlchbqi55" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/19/tslearning4/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -167,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck1kb2i91000t0uohctnjm49l" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="ck1qjxl740015sgohjucqvyg9" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/18/tslearning3/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -224,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/16/tslearning2/" data-id="ck1kb2i8t000e0uohpxnls0xd" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/16/tslearning2/" data-id="ck1qjxl6v000msgoha66ni6z0" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/16/tslearning2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -274,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/12/tslearning1/" data-id="ck1kb2i9900180uohe1g2x48k" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/12/tslearning1/" data-id="ck1qjxl71000ysgohrwj5uh2w" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/12/tslearning1/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -335,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/11/WEB缓存/" data-id="ck1kb2i8b00000uohdugimgfx" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/11/WEB缓存/" data-id="ck1qjxl6b0002sgoh77gvkx9h" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/11/WEB缓存/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -393,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck1kb2i9a001b0uohkinflzgb" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/09/记录下Object-create/" data-id="ck1qjxl7a001jsgohtzke40i4" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/09/09/记录下Object-create/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -443,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/08/14/start/" data-id="ck1kb2i8r000c0uohb0xpivwa" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/08/14/start/" data-id="ck1qjxl6x000rsgohb42fedmi" class="article-share-link">Share</a>
       
         <a href="http://w3ctalk.com/2019/08/14/start/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -514,6 +570,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/14/guanlixuexi/">圈外免费课的学习总结</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/10/darkmode/">深色模式探索</a>
           </li>
         
@@ -527,10 +587,6 @@
         
           <li>
             <a href="/2019/09/30/jsmularrow/">JS中的多个连续函数和柯里化</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/29/designMode/">网页可编辑模式</a>
           </li>
         
       </ul>
