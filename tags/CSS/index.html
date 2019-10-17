@@ -5,27 +5,15 @@
   
 
   
-  <title>深色模式探索 | W3CTALK</title>
+  <title>Tag: CSS | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。 最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：">
-<meta name="keywords" content="前端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="深色模式探索">
-<meta property="og:url" content="http://w3ctalk.com/2019/10/10/darkmode/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="W3CTALK">
+<meta property="og:url" content="http://w3ctalk.com/tags/CSS/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。 最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://w3ctalk.com/images/banner/16.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/darkmode/00.gif">
-<meta property="og:image" content="http://w3ctalk.com/images/darkmode/01.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/darkmode/03.jpg">
-<meta property="og:image" content="http://w3ctalk.com/images/darkmode/02.gif">
-<meta property="og:image" content="http://w3ctalk.com/images/fine/0007.jpg">
-<meta property="og:updated_time" content="2019-10-10T06:10:32.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深色模式探索">
-<meta name="twitter:description" content="新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。 最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：">
-<meta name="twitter:image" content="http://w3ctalk.com/images/banner/16.jpg">
+<meta name="twitter:title" content="W3CTALK">
   
   
     <link rel="icon" href="/favicon.png">
@@ -85,104 +73,41 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-darkmode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/darkmode/" class="article-date">
-  <time datetime="2019-10-10T03:25:14.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      深色模式探索
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/10/17/cssvariables1/" class="archive-article-date">
+  <time datetime="2019-10-17T05:52:49.000Z" itemprop="datePublished">Oct 17</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/10/17/cssvariables1/">CSS变量初探</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/banner/16.jpg" alt></p>
-<p>新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。</p>
-<p>最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：</p>
-<p><img src="/images/darkmode/00.gif" alt></p>
-<a id="more"></a>
-
-<p>目前，实现dark mode模式主要靠新的一个媒体查询<code>prefers-color-scheme</code>：</p>
-<p><img src="/images/darkmode/01.jpg" alt></p>
-<ul>
-<li>no-preference：无颜色爱好</li>
-<li>light：浅色</li>
-<li>dark：深色</li>
-</ul>
-<p>使用方法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: light) &#123;</span><br><span class="line">  <span class="comment">/* 浅色模式样式 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span><br><span class="line">  <span class="comment">/* 深色模式样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>默认状态都是浅色模式，所以我们一般只要适配深色模式的样式就好~</p>
-<p>js我们可以用下面的方法来判断：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.matchMedia(<span class="string">'(prefers-color-scheme: dark)'</span>).matches === <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/darkmode/03.jpg" alt></p>
-<p>下面在自己的代码中加入如下代码：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (prefers-color-scheme: dark) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#803232</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：</p>
-<p><img src="/images/darkmode/02.gif" alt></p>
-<p>另外，如果有图片的话也要做相应的调整，因为有可能会显得很耀眼，这个根据实际情况来。后面有可能很多系统都开始支持dark mode，前端适配dark mode成为主流~</p>
-<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
-<p><img src="/images/fine/0007.jpg" alt></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/10/10/darkmode/" data-id="ck1uasxg00006pns6s3nntjql" class="article-share-link">Share</a>
-      
-        <a href="http://w3ctalk.com/2019/10/10/darkmode/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/10/14/guanlixuexi/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          圈外免费课的学习总结
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/10/09/regetwindows/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">一块显卡的力量--重回Windows</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 </section>
         
           <aside id="sidebar">
@@ -316,13 +241,11 @@
 <script>
   var disqus_shortname = 'w3ctalk';
   
-  var disqus_url = 'http://w3ctalk.com/2019/10/10/darkmode/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
