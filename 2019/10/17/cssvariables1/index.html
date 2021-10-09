@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://w3ctalk.com/images/cssvariables/00.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/fine/0009.jpg">
 <meta property="article:published_time" content="2019-10-17T05:52:49.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.892Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="CSS">
@@ -43,7 +43,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -107,7 +107,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/17.jpg" alt></p>
+        <p><img src="/images/banner/17.jpg"></p>
 <blockquote>
 <p>如果你现在去看一些demo级的代码，有不少人已经开始使用CSS变量。<br>虽然它现在还不能投入生产环境，也很简单，但这不代表你可以忽视它。  </p>
 </blockquote>
@@ -120,43 +120,43 @@
 <li>提高系统代码的可读性</li>
 <li>可以在浏览器中实时修改生效</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="CSS变量定义及使用"><a href="#CSS变量定义及使用" class="headerlink" title="CSS变量定义及使用"></a>CSS变量定义及使用</h3><p>CSS变量是以<code>--</code>（两个破折号）开头的<code>属性</code>，也被成为<code>自定义属性</code></p>
-<p><strong><em>CSS变量名称区分大小写，–primary-color 不同于 –Primary-Color</em></strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">  <span class="comment">/* 变量定义. */</span></span><br><span class="line">  <span class="attribute">--color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>CSS变量名称区分大小写，–primary-color 不同于 –Primary-Color</strong></em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">  <span class="comment">/* 变量定义. */</span></span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>CSS变量的使用可能会比较麻烦，尤其是很多前端已经熟悉了现存的一些预编译处理器的话，比如Sass：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$color</span>: blue;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>CSS变量是用<code>var()</code>函数来实现引用，var函数的第一个参数是要替换的自定义属性的名称。函数的可选第二个参数用作备用值。如果第一个参数引用的自定义属性无效，则该函数将使用第二个值。</p>
-<p><strong><em>第二个值是作为整体而工var函数使用的</em></strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">--color</span>: <span class="number">#666</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--color, #<span class="number">999</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em><strong>第二个值是作为整体而工var函数使用的</strong></em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--color, <span class="number">#999</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当然除了这些，你还要小心它和那些其他的预处理器的变量的不同，多数情况你要把它当做<code>属性</code>：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">--color</span>: ‘margin-top’;</span><br><span class="line">  <span class="comment">/* 这是错误的. */</span></span><br><span class="line">  var(--color): 20px;</span><br><span class="line">  <span class="comment">/* 进行数学运算也是错的. */</span></span><br><span class="line">  <span class="selector-tag">--font-size</span>: 10<span class="selector-tag">px</span> * 2;</span><br><span class="line">  <span class="comment">/* 需要借用calc函数. */</span></span><br><span class="line">  <span class="selector-tag">--font-size</span>: <span class="selector-tag">calc</span>(20<span class="selector-tag">px</span> * 2)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  --<span class="attribute">color</span>: ‘margin-top’;</span><br><span class="line">  <span class="comment">/* 这是错误的. */</span></span><br><span class="line">  <span class="selector-tag">var</span>(--<span class="attribute">color</span>): <span class="number">20px</span>;</span><br><span class="line">  <span class="comment">/* 进行数学运算也是错的. */</span></span><br><span class="line">  --<span class="attribute">font-size</span>: <span class="number">10px</span> * <span class="number">2</span>;</span><br><span class="line">  <span class="comment">/* 需要借用calc函数. */</span></span><br><span class="line">  --<span class="attribute">font-size</span>: <span class="built_in">calc</span>(<span class="number">20px</span> * <span class="number">2</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><em>为什么会用<code>--</code>呢？因为都被其他的预处理器占了，但我觉得这不应该是理由。。。。。</em></strong></p>
+<p><em><strong>为什么会用<code>--</code>呢？因为都被其他的预处理器占了，但我觉得这不应该是理由。。。。。</strong></em></p>
 <h3 id="CSS变量的作用域"><a href="#CSS变量的作用域" class="headerlink" title="CSS变量的作用域"></a>CSS变量的作用域</h3><p>会定义和使用变量了，就得了解变量的作用域，每门语言大概都一样。CSS变量的作用域分两种：<code>全局</code>和<code>局部</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 全局. */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">--color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 局部. */</span></span><br><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  <span class="attribute">--color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 全局. */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#666</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 局部. */</span></span><br><span class="line"><span class="selector-class">.block</span> &#123;</span><br><span class="line">  --<span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="/images/cssvariables/00.jpg" alt></p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="/images/cssvariables/00.jpg"></p>
 <p>可以使用 <code>@support</code> 命令进行检测是否支持CSS变量</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@supports</span> ( (<span class="attribute">--a:</span> <span class="number">0</span>)) &#123;</span><br><span class="line">  <span class="comment">/** supported **/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@supports</span> ( <span class="keyword">not</span> (<span class="attribute">--a:</span> <span class="number">0</span>)) &#123;</span><br><span class="line">  <span class="comment">/* not supported */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@supports</span> ( (<span class="attribute">--a</span>: <span class="number">0</span>)) &#123;</span><br><span class="line">  <span class="comment">/** supported **/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@supports</span> ( <span class="keyword">not</span> (<span class="attribute">--a</span>: <span class="number">0</span>)) &#123;</span><br><span class="line">  <span class="comment">/* not supported */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>对于不支持CSS变量的浏览器，一个变通的方案是使用具有虚拟查询条件(dummy conditional query)的 <code>@supports</code> 代码块</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@supports(--css: variables) &#123;</span><br><span class="line">  <span class="selector-tag">section</span> &#123;</span><br><span class="line">    <span class="attribute">--my-color</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--my-color, <span class="string">'blue'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">section</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: gray;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">@supports</span>(--css: variables) &#123;</span><br><span class="line">  <span class="selector-tag">section</span> &#123;</span><br><span class="line">    --my-<span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">var</span>(--my-color, <span class="string">&#x27;blue&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>javaScript 也可以检测浏览器是否支持 CSS 变量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isSupported =</span><br><span class="line">  <span class="built_in">window</span>.CSS &amp;&amp;</span><br><span class="line">  <span class="built_in">window</span>.CSS.supports &amp;&amp;</span><br><span class="line">  <span class="built_in">window</span>.CSS.supports(<span class="string">'--a'</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isSupported) &#123;</span><br><span class="line">  <span class="comment">/* supported */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">/* not supported */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isSupported =</span><br><span class="line">  <span class="built_in">window</span>.CSS &amp;&amp;</span><br><span class="line">  <span class="built_in">window</span>.CSS.supports &amp;&amp;</span><br><span class="line">  <span class="built_in">window</span>.CSS.supports(<span class="string">&#x27;--a&#x27;</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isSupported) &#123;</span><br><span class="line">  <span class="comment">/* supported */</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">/* not supported */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>欢迎留言讨论 ^_^ ~</strong></p>
-<p><img src="/images/fine/0009.jpg" alt></p>
+<p><img src="/images/fine/0009.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/10/17/cssvariables1/" data-id="cktv4vj9v0007f6fym13usr56" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/10/17/cssvariables1/" data-id="ckujf3yi50007jqfy4woqbgvw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
@@ -188,7 +188,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",

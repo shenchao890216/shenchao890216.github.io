@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://w3ctalk.com/images/banner/10.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/fine/0001.jpg">
 <meta property="article:published_time" content="2019-09-24T05:36:14.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.895Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="TypeScript Learning">
@@ -42,7 +42,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -106,13 +106,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/10.jpg" alt></p>
+        <p><img src="/images/banner/10.jpg"></p>
 <h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><p>类型推论就是在我们不提供类型时，ts自己推断变量该属于哪个类型。比如，我们输入<code>let a = 3</code>后，虽然我们没有注解<code>a</code>是一个<code>number</code>类型，但是ts自己会推断为<code>a</code>是一个<code>number</code>类型的变量。</p>
 <p>当推论更复杂的类型时，ts会推论一个最佳通用类型来适应当前变量。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="类型兼容"><a href="#类型兼容" class="headerlink" title="类型兼容"></a>类型兼容</h3><p>类型兼容总的来说就是在遇到两个变量互相赋值（包括函数传参）时，二者的兼容性。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = &#123;</span><br><span class="line">  name: <span class="string">'scrd'</span>,</span><br><span class="line">  age: <span class="number">19</span>,</span><br><span class="line">  married: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b能赋值给a.</span></span><br><span class="line">a = b</span><br><span class="line"><span class="comment">// a不能赋值给b,会报错.</span></span><br><span class="line">b = a <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;w3ctalk&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;scrd&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">married</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// b能赋值给a.</span></span><br><span class="line">a = b</span><br><span class="line"><span class="comment">// a不能赋值给b,会报错.</span></span><br><span class="line">b = a <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
 
 <p>情况比较多，没必要一一列举，请自查文档，总结就是：</p>
 <blockquote>
@@ -132,13 +132,13 @@
 <li>in类型保护</li>
 </ul>
 <p><strong>欢迎留言讨论 ^_^ ~</strong></p>
-<p><img src="/images/fine/0001.jpg" alt></p>
+<p><img src="/images/fine/0001.jpg"></p>
 <p><em>生不如猫系列</em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="cktv4vjan001ff6fyss84bbef" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/24/tslearning6/" data-id="ckujf3yij001fjqfydzq4bq88" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/" rel="tag">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
@@ -179,7 +179,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",

@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://w3ctalk.com/images/banner/3.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/web-cache-00.jpg">
 <meta property="article:published_time" content="2019-09-11T12:48:34.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.890Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -105,7 +105,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/3.jpg" alt></p>
+        <p><img src="/images/banner/3.jpg"></p>
 <p>几几乎所有的WEB开发都绕不开缓存这个话题，把知道的和搜到的系统的整理一下，方便后面的使用</p>
 <p>WEB缓存分为数据库缓存、代理服务器缓存、CDN缓存、应用层缓存、浏览器缓存等等，对前端来说接触最多就是浏览器缓存，也又称作HTTP缓存，这类缓存只对GET请求有效。由此，可以解释一些人对浏览器缓存的认识误区：</p>
 <ul>
@@ -118,9 +118,9 @@
 <h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>HTTP 1.1的产物，于Expries同在的时候，优先级高于Expries，有多个字段可以设置，比如：使用max-age可设置缓存最大的有效时间（单位：秒 ），<code>max-age=2592000</code>就是设置缓存<code>2592000秒[即30天]</code></p>
 <h3 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h3><p>服务器资源最后修改时间，需要和Cache-Control一起使用，是检查服务器资源是否更新的一种方式</p>
 <h3 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h3><p>根据实体内容生成的一段hash标识符，有服务端产生。浏览器会把这段字符串传回去，验证资源是否已修改，通过<code>Etag</code>和<code>Last-Modified</code>可以判断资源是否修改，由此判断是否返回状态304</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<p><img src="/images/web-cache-00.jpg" alt></p>
+<p><img src="/images/web-cache-00.jpg"></p>
 <p>上面会这么几个状态码：</p>
 <ul>
 <li>200</li>
@@ -146,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/11/WEB%E7%BC%93%E5%AD%98/" data-id="cktv4vj9e0000f6fyzuvjmfn6" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/11/WEB%E7%BC%93%E5%AD%98/" data-id="ckujf3yhz0001jqfy31mk1kqq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
@@ -187,7 +187,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",

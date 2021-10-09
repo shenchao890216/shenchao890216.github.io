@@ -7,19 +7,19 @@
   
   <title>记录下Object.create | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Object.create(null)经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。  Object.create(proto[, propertiesObject])方法创建一个新对象，使用现有的对象来提供新创建的对象的proto   — Object.create() - JavaScript | MDN    参数proto :">
+  <meta name="description" content="Object.create(null)经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。  Object.create(proto[, propertiesObject])方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__   — Object.create() - JavaScript | MDN    参数prot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录下Object.create">
 <meta property="og:url" content="http://w3ctalk.com/2019/09/09/%E8%AE%B0%E5%BD%95%E4%B8%8BObject-create/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="Object.create(null)经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。  Object.create(proto[, propertiesObject])方法创建一个新对象，使用现有的对象来提供新创建的对象的proto   — Object.create() - JavaScript | MDN    参数proto :">
+<meta property="og:description" content="Object.create(null)经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。  Object.create(proto[, propertiesObject])方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__   — Object.create() - JavaScript | MDN    参数prot">
 <meta property="og:locale">
 <meta property="og:image" content="http://w3ctalk.com/images/banner/2.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/object-create-02.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/object-create-00.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/object-create-01.jpg">
 <meta property="article:published_time" content="2019-09-09T12:52:56.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.896Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -43,7 +43,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -107,36 +107,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/2.jpg" alt></p>
+        <p><img src="/images/banner/2.jpg"></p>
 <p><code>Object.create(null)</code>经常出现在框架代码中，说起来这个api倒不是有多么神秘，只是之前确实没有接触过，特地的查了一下并记录下来。</p>
 <blockquote>
-<p><code>Object.create(proto[, propertiesObject])</code>方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>  </p>
-<p>— <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create() - JavaScript | MDN</a>  </p>
+<p><code>Object.create(proto[, propertiesObject])</code>方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__  </p>
+<p>— <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create() - JavaScript | MDN</a>  </p>
 </blockquote>
 <h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p><code>proto</code> : 新创建的对象的原型对象</p>
 <p><code>propertiesObject</code> : （可选）则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称，这些属性对应Object.defineProperties()的第二个参数</p>
 <p><em>注： 如果propertiesObject参数是 null 或非原始包装对象，则抛出一个 TypeError 异常</em></p>
 <h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>一个新对象，带着指定的原型对象和属性</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o3 = <span class="built_in">Object</span>.create(&#123;<span class="attr">name</span>: <span class="string">'w3ctalk'</span>&#125;, &#123;</span><br><span class="line">  age: &#123;</span><br><span class="line">    value: <span class="number">12</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(o3)</span><br></pre></td></tr></table></figure>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o3 = <span class="built_in">Object</span>.create(&#123;<span class="attr">name</span>: <span class="string">&#x27;w3ctalk&#x27;</span>&#125;, &#123;</span><br><span class="line">  <span class="attr">age</span>: &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="number">12</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(o3)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/object-create-02.jpg" alt></p>
+<p><img src="/images/object-create-02.jpg"></p>
 <h3 id="创建一个纯粹的对象"><a href="#创建一个纯粹的对象" class="headerlink" title="创建一个纯粹的对象"></a>创建一个纯粹的对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o1 = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"><span class="built_in">console</span>.log(o1)</span><br></pre></td></tr></table></figure>
 
 <p>在浏览器的结果：</p>
-<p><img src="/images/object-create-00.jpg" alt></p>
-<p>如果是一个<code>{}</code>呢？我们做一个对比：</p>
+<p><img src="/images/object-create-00.jpg"></p>
+<p>如果是一个<code>&#123;&#125;</code>呢？我们做一个对比：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> o2 = &#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log(o2)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/object-create-01.jpg" alt></p>
+<p><img src="/images/object-create-01.jpg"></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><code>Object.create</code>就是把现有对象指定为将要创建对象的原型，但人们更多是利用<code>Object.create(null)</code>来创建一个更纯粹的对象或者纯粹的键值组合</p>
 <p><strong>欢迎留言讨论 ^_^ ~</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/09/%E8%AE%B0%E5%BD%95%E4%B8%8BObject-create/" data-id="cktv4vjaq001if6fy4lu6lym1" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/09/%E8%AE%B0%E5%BD%95%E4%B8%8BObject-create/" data-id="ckujf3yil001ljqfyfwjtasp1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
@@ -177,7 +177,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",

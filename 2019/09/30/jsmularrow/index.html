@@ -7,18 +7,18 @@
   
   <title>JS中的多个连续函数和柯里化 | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看着redux-logger的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊~（据说redux-thunk的还长） 老长~  这个返回返回再返回，真是简直~  高阶函数：将函数作为参数或者返回值是函数的函数    所以，这就是高阶函数啊！  在计算机科学中，柯里化（英語：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并">
+  <meta name="description" content="看着redux-logger的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊~~~~（据说redux-thunk的还长） 老长~~~~  这个返回返回再返回，真是简直~  高阶函数：将函数作为参数或者返回值是函数的函数    所以，这就是高阶函数啊！  在计算机科学中，柯里化（英語：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的多个连续函数和柯里化">
 <meta property="og:url" content="http://w3ctalk.com/2019/09/30/jsmularrow/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="看着redux-logger的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊~（据说redux-thunk的还长） 老长~  这个返回返回再返回，真是简直~  高阶函数：将函数作为参数或者返回值是函数的函数    所以，这就是高阶函数啊！  在计算机科学中，柯里化（英語：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并">
+<meta property="og:description" content="看着redux-logger的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊~~~~（据说redux-thunk的还长） 老长~~~~  这个返回返回再返回，真是简直~  高阶函数：将函数作为参数或者返回值是函数的函数    所以，这就是高阶函数啊！  在计算机科学中，柯里化（英語：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数">
 <meta property="og:locale">
 <meta property="og:image" content="http://w3ctalk.com/images/banner/13.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/jsmularrow/jsmularrow-00.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/fine/0004.jpg">
 <meta property="article:published_time" content="2019-09-30T08:39:22.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.893Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
@@ -42,7 +42,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -106,10 +106,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/13.jpg" alt></p>
-<p>看着<code>redux-logger</code>的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊<del>~</del>（据说<code>redux-thunk</code>的还长）</p>
-<p><strong>老长<del>~</del></strong></p>
-<p><img src="/images/jsmularrow/jsmularrow-00.jpg" alt></p>
+        <p><img src="/images/banner/13.jpg"></p>
+<p>看着<code>redux-logger</code>的源码，有个地方瞬间就懵逼了，连续的箭头函数，那一串啊~~~~（据说<code>redux-thunk</code>的还长）</p>
+<p><strong>老长~~~~</strong></p>
+<p><img src="/images/jsmularrow/jsmularrow-00.jpg"></p>
 <p>这个返回返回再返回，真是简直~</p>
 <blockquote>
 <p>高阶函数：将函数作为参数或者返回值是函数的函数  </p>
@@ -119,7 +119,7 @@
 <p>在计算机科学中，柯里化（英語：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术  </p>
 </blockquote>
 <p>你看，这就是高阶函数的柯里化应用（通俗讲就是返回函数，把需要多个参数的改写成单个参数的过程）</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="最简单的高阶函数"><a href="#最简单的高阶函数" class="headerlink" title="最简单的高阶函数"></a>最简单的高阶函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">c</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b + c)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">let</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a, b, f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> f(a) + f(b)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -134,12 +134,12 @@
 <li>提前返回</li>
 <li>延迟计算/运行</li>
 </ol>
-<p><img src="/images/fine/0004.jpg" alt></p>
+<p><img src="/images/fine/0004.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/09/30/jsmularrow/" data-id="cktv4vja6000jf6fy5gs13ikf" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/09/30/jsmularrow/" data-id="ckujf3yia000jjqfy6t6qaur8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
@@ -180,7 +180,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",

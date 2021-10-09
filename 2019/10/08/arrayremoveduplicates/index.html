@@ -7,19 +7,19 @@
   
   <title>数组去重的一些记录 | W3CTALK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~    使用SetSet是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。 Set实际是一个构造函数，用来生成Set，我们可以传入一个数组来生成： 1234567let test1 &#x3D; &amp;#123; name: &#39;test1&#39;&amp;#1">
+  <meta name="description" content="多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~    使用SetSet是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。 Set实际是一个构造函数，用来生成Set，我们可以传入一个数组来生成： 1234567let test1 &#x3D; &amp;#123; name: &amp;#x27;test">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组去重的一些记录">
 <meta property="og:url" content="http://w3ctalk.com/2019/10/08/arrayremoveduplicates/index.html">
 <meta property="og:site_name" content="W3CTALK">
-<meta property="og:description" content="多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~    使用SetSet是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。 Set实际是一个构造函数，用来生成Set，我们可以传入一个数组来生成： 1234567let test1 &#x3D; &amp;#123; name: &#39;test1&#39;&amp;#1">
+<meta property="og:description" content="多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~    使用SetSet是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。 Set实际是一个构造函数，用来生成Set，我们可以传入一个数组来生成： 1234567let test1 &#x3D; &amp;#123; name: &amp;#x27;test">
 <meta property="og:locale">
 <meta property="og:image" content="http://w3ctalk.com/images/banner/14.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/arrayremoveduplicates/arrayremoveduplicates-00.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/arrayremoveduplicates/arrayremoveduplicates-01.jpg">
 <meta property="og:image" content="http://w3ctalk.com/images/fine/0005.jpg">
 <meta property="article:published_time" content="2019-10-08T05:36:22.000Z">
-<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:modified_time" content="2021-09-22T06:52:14.891Z">
 <meta property="article:author" content="SCRD">
 <meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
@@ -43,7 +43,7 @@
 
     gtag('config', 'UA-147542890-1');
   </script>
-</head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -107,13 +107,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/banner/14.jpg" alt></p>
+        <p><img src="/images/banner/14.jpg"></p>
 <blockquote>
 <p>多年的工作，我也没有用到这个知识（应该是自己比较菜），但这东西一直在面试里出现，看到别的总结的都是一两个点，所以打算自己总结一下，给自己备用~  </p>
 </blockquote>
 <h3 id="使用Set"><a href="#使用Set" class="headerlink" title="使用Set"></a>使用Set</h3><p><code>Set</code>是ES6中新的数据结构，它类似数组，但数据成员都是唯一的，没有重复的值。</p>
 <p><code>Set</code>实际是一个构造函数，用来生成<code>Set</code>，我们可以传入一个数组来生成：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test1 = &#123; <span class="attr">name</span>: <span class="string">'test1'</span>&#125;</span><br><span class="line"><span class="keyword">let</span> test2 = test1</span><br><span class="line"><span class="keyword">let</span> test3 = &#123; <span class="attr">name</span>: <span class="string">'test3'</span> &#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">'🙄'</span>, <span class="string">'🙄'</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">'1'</span>, test1, test3, test2]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成set.</span></span><br><span class="line"><span class="keyword">let</span> arrSet = <span class="keyword">new</span> <span class="built_in">Set</span>(arr)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;test1&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">let</span> test2 = test1</span><br><span class="line"><span class="keyword">let</span> test3 = &#123; <span class="attr">name</span>: <span class="string">&#x27;test3&#x27;</span> &#125;</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;🙄&#x27;</span>, <span class="string">&#x27;🙄&#x27;</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>, test1, test3, test2]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成set.</span></span><br><span class="line"><span class="keyword">let</span> arrSet = <span class="keyword">new</span> <span class="built_in">Set</span>(arr)</span><br></pre></td></tr></table></figure>
 
 <p>再把<code>Set</code>变回数组有两种办法：</p>
 <ol>
@@ -122,28 +122,28 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr)))</span><br><span class="line"><span class="comment">// 第二种.</span></span><br><span class="line"><span class="built_in">console</span>.log([...new <span class="built_in">Set</span>(arr)])</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/arrayremoveduplicates/arrayremoveduplicates-00.jpg" alt></p>
-<a id="more"></a>
+<p><img src="/images/arrayremoveduplicates/arrayremoveduplicates-00.jpg"></p>
+<span id="more"></span>
 
-<h3 id="利用filter和indexOf"><a href="#利用filter和indexOf" class="headerlink" title="利用filter和indexOf"></a>利用<code>filter</code>和<code>indexOf</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'🙄'</span>, <span class="string">'🙄'</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">'1'</span>, test1, test3, test2]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.filter(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> arr.indexOf(item) === index</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
+<h3 id="利用filter和indexOf"><a href="#利用filter和indexOf" class="headerlink" title="利用filter和indexOf"></a>利用<code>filter</code>和<code>indexOf</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;🙄&#x27;</span>, <span class="string">&#x27;🙄&#x27;</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>, test1, test3, test2]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.filter(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> arr.indexOf(item) === index</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/arrayremoveduplicates/arrayremoveduplicates-01.jpg" alt></p>
-<h3 id="利用reduce和includes"><a href="#利用reduce和includes" class="headerlink" title="利用reduce和includes"></a>利用<code>reduce</code>和<code>includes</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'🙄'</span>, <span class="string">'🙄'</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">'1'</span>, test1, test3, test2]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.reduce(<span class="function">(<span class="params">unique, item</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> unique.includes(item) ? unique : [...unique, item]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/arrayremoveduplicates/arrayremoveduplicates-01.jpg"></p>
+<h3 id="利用reduce和includes"><a href="#利用reduce和includes" class="headerlink" title="利用reduce和includes"></a>利用<code>reduce</code>和<code>includes</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;🙄&#x27;</span>, <span class="string">&#x27;🙄&#x27;</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>, test1, test3, test2]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.reduce(<span class="function">(<span class="params">unique, item</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> unique.includes(item) ? unique : [...unique, item]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
 
 <h3 id="利用对象key值"><a href="#利用对象key值" class="headerlink" title="利用对象key值"></a>利用对象key值</h3><p>这种方法的局限性就到了，一般都是值有重复的数字或字符串</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> newArr = []</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">'🙄'</span>, <span class="string">'🙄'</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">'1'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!obj[arr[i]]) &#123;</span><br><span class="line">    newArr.push(arr[i])</span><br><span class="line">    obj[arr[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> newArr = []</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;🙄&#x27;</span>, <span class="string">&#x27;🙄&#x27;</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="string">&#x27;1&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!obj[arr[i]]) &#123;</span><br><span class="line">    newArr.push(arr[i])</span><br><span class="line">    obj[arr[i]] = <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(newArr)</span><br></pre></td></tr></table></figure>
 
 <p>其余都是利用多次循环来做到去重，暂时就这样了~</p>
 <p><strong>待续吧~ 我要为祖国母亲庆生~</strong></p>
 <blockquote>
-<p>给祖国母亲庆生完了，老实的搬砖<del>~</del></p>
+<p>给祖国母亲庆生完了，老实的搬砖~~~~</p>
 </blockquote>
-<p><img src="/images/fine/0005.jpg" alt></p>
+<p><img src="/images/fine/0005.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://w3ctalk.com/2019/10/08/arrayremoveduplicates/" data-id="cktv4vj9k0002f6fytjr2jk6o" class="article-share-link">Share</a>
+      <a data-url="http://w3ctalk.com/2019/10/08/arrayremoveduplicates/" data-id="ckujf3yi20003jqfy1y937vli" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
@@ -184,7 +184,7 @@
 <script type="text/javascript">
   new Gitalk({
     clientID: "Iv1.fc5c5c26e585168c",
-    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    clientSecret: "8da6bbb03170e9742535d29fd0dc7af384476f5b",
     repo: "shenchao890216.github.io",
     owner: "shenchao890216",
     admin: "shenchao890216",
