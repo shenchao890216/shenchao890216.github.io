@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>深色模式探索 | W3CTALK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。 最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深色模式探索">
+<meta property="og:url" content="http://w3ctalk.com/2019/10/10/darkmode/index.html">
+<meta property="og:site_name" content="W3CTALK">
+<meta property="og:description" content="新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。 最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：">
+<meta property="og:locale">
+<meta property="og:image" content="http://w3ctalk.com/images/banner/16.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/darkmode/00.gif">
+<meta property="og:image" content="http://w3ctalk.com/images/darkmode/01.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/darkmode/03.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/darkmode/02.gif">
+<meta property="og:image" content="http://w3ctalk.com/images/fine/0007.jpg">
+<meta property="article:published_time" content="2019-10-10T03:25:14.000Z">
+<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:author" content="SCRD">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://w3ctalk.com/images/banner/16.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147542890-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-147542890-1');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">W3CTALK</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/fesources">资源</a>
+        
+          <a class="main-nav-link" href="/about">关于本站</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://w3ctalk.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-darkmode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/10/darkmode/" class="article-date">
+  <time datetime="2019-10-10T03:25:14.000Z" itemprop="datePublished">2019-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深色模式探索
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/16.jpg" alt></p>
+<p>新的iOS和macOS都已经发布了，其中最引人注目的就是dark mode，现在除了相应APP要做适配以外，网页也是在呼应中在有dark mode的模式下做适配，虽然我也不知道有什么作用。</p>
+<p>最先感受到的是tw，突然有一天就发现在用系统dark mode的时候，网页也会跟着变化：</p>
+<p><img src="/images/darkmode/00.gif" alt></p>
+<a id="more"></a>
+
+<p>目前，实现dark mode模式主要靠新的一个媒体查询<code>prefers-color-scheme</code>：</p>
+<p><img src="/images/darkmode/01.jpg" alt></p>
+<ul>
+<li>no-preference：无颜色爱好</li>
+<li>light：浅色</li>
+<li>dark：深色</li>
+</ul>
+<p>使用方法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> light) &#123;</span><br><span class="line">  <span class="comment">/* 浅色模式样式 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> dark) &#123;</span><br><span class="line">  <span class="comment">/* 深色模式样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>默认状态都是浅色模式，所以我们一般只要适配深色模式的样式就好~</p>
+<p>js我们可以用下面的方法来判断：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.matchMedia(<span class="string">'(prefers-color-scheme: dark)'</span>).matches === <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/darkmode/03.jpg" alt></p>
+<p>下面在自己的代码中加入如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (<span class="attribute">prefers-color-scheme:</span> dark) &#123;</span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#803232</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="/images/darkmode/02.gif" alt></p>
+<p>另外，如果有图片的话也要做相应的调整，因为有可能会显得很耀眼，这个根据实际情况来。后面有可能很多系统都开始支持dark mode，前端适配dark mode成为主流~</p>
+<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
+<p><img src="/images/fine/0007.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/10/10/darkmode/" data-id="cktv4vj9x0008f6fyvuoihn82" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/14/guanlixuexi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          圈外免费课的学习总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/09/regetwindows/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">一块显卡的力量--重回Windows</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--  -->
+
+
+	<div id="gitalk-container"></div>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://priesttomb.github.io/js/md5.min.js"></script>
+<script type="text/javascript">
+  new Gitalk({
+    clientID: "Iv1.fc5c5c26e585168c",
+    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    repo: "shenchao890216.github.io",
+    owner: "shenchao890216",
+    admin: "shenchao890216",
+    id: md5(location.pathname),
+    distractionFreeMode: true
+  }).render("gitalk-container")
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript-Learning/" rel="tag">TypeScript Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/TypeScript-Learning/" style="font-size: 16.67px;">TypeScript Learning</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/17/cssvariables1/">CSS变量初探</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/14/guanlixuexi/">圈外免费课的学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/10/darkmode/">深色模式探索</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/09/regetwindows/">一块显卡的力量--重回Windows</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/08/arrayremoveduplicates/">数组去重的一些记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">Links</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="https://abianji.com/" target="_blank">阿比安吉</a>
+        </li>
+      
+        <li>
+          <a href="https://faaaar.github.io/" target="_blank">faaaar</a>
+        </li>
+      
+        <li>
+          <a href="https://mrzhang123.github.io/blog/home/" target="_blank">Mark Zhang Blog</a>
+        </li>
+      
+        <li>
+          <a href="https://coderge.com/articles" target="_blank">coderge</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <ul>
+        <li>2021 &copy; SCRD</li>
+        <li><a target="_blank" rel="noopener" href="https://github.com/shenchao890216" class="github-link"></a></li>
+        <li><a target="_blank" rel="noopener" href="http://weibo.com/w3ctalk?is_all=1" class="weibo-link"></a></li>
+        <li><a target="_blank" rel="noopener" href="https://twitter.com/shenchao890216" class="tw-link"></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/fesources" class="mobile-nav-link">资源</a>
+  
+    <a href="/about" class="mobile-nav-link">关于本站</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

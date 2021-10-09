@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>TypeScript Learning 3 - 接口初探 | W3CTALK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="接口就是对值所具有的数据结构的一种约束，有了这种约束，ts才能对值的相应类型做相应的检查。这种约束主要针对的是对象、函数、类等。     接口在运行时的影响为0 接口初探1234interface Person &amp;#123;  name: string  age: number&amp;#125;  上面便是定义了一个接口Person，它约束了凡是类型为Person的值，都应该有string类型的nam">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript Learning 3 - 接口初探">
+<meta property="og:url" content="http://w3ctalk.com/2019/09/18/tslearning3/index.html">
+<meta property="og:site_name" content="W3CTALK">
+<meta property="og:description" content="接口就是对值所具有的数据结构的一种约束，有了这种约束，ts才能对值的相应类型做相应的检查。这种约束主要针对的是对象、函数、类等。     接口在运行时的影响为0 接口初探1234interface Person &amp;#123;  name: string  age: number&amp;#125;  上面便是定义了一个接口Person，它约束了凡是类型为Person的值，都应该有string类型的nam">
+<meta property="og:locale">
+<meta property="og:image" content="http://w3ctalk.com/images/banner/6.jpg">
+<meta property="og:image" content="http://w3ctalk.com/images/tslearning3-00.jpg">
+<meta property="article:published_time" content="2019-09-18T09:46:38.000Z">
+<meta property="article:modified_time" content="2020-07-31T16:49:17.000Z">
+<meta property="article:author" content="SCRD">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="TypeScript Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://w3ctalk.com/images/banner/6.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147542890-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-147542890-1');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">W3CTALK</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/fesources">资源</a>
+        
+          <a class="main-nav-link" href="/about">关于本站</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://w3ctalk.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tslearning3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/18/tslearning3/" class="article-date">
+  <time datetime="2019-09-18T09:46:38.000Z" itemprop="datePublished">2019-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScript Learning 3 - 接口初探
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/banner/6.jpg" alt></p>
+<p>接口就是对值所具有的数据结构的一种约束，有了这种约束，ts才能对值的相应类型做相应的检查。这种约束主要针对的是对象、函数、类等。    </p>
+<p><strong>接口在运行时的影响为0</strong></p>
+<h3 id="接口初探"><a href="#接口初探" class="headerlink" title="接口初探"></a>接口初探</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面便是定义了一个接口<code>Person</code>，它约束了凡是类型为<code>Person</code>的值，都应该有<code>string</code>类型的<code>name</code>和<code>number</code>类型的<code>age</code>。</p>
+<p><strong>接口名第一个字母一般都位大写</strong></p>
+<a id="more"></a>
+
+<p><img src="/images/tslearning3-00.jpg" alt></p>
+<p>当把变量设置为<code>Person</code>类型时，所有属性都应该一一对应上（ts并不会对属性的顺序做检查），多一个和少一个都是不被允许的。</p>
+<p>这个只有在对象字面量时作用，它会严格检查相应的属性，ts认为你多出的没用的属性是可能会引起程序错误的，绕过这个检查的方法后面说。</p>
+<p>下面定义了一个函数并调用：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span> (<span class="params">person: Person</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>, person.name, <span class="string">', age-'</span>, person.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHello(&#123;</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><em>这时在调用<code>sayHello</code>时，上面的对象字面量也是会经过严格检查的</em></p>
+<p>假设没有接口，我们重新这个例子：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span> (<span class="params">person: &#123;name: <span class="built_in">string</span>, age: <span class="built_in">number</span>&#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>, person.name, <span class="string">', age-'</span>, person.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHello(&#123;</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这时，你会发现如果对象属性足够多，代码就开始显得过分臃肿，所以，接口也有使代码更加清晰的作用。</p>
+<p>接口属性分为：</p>
+<ul>
+<li>可选属性</li>
+<li>只读属性</li>
+</ul>
+<h3 id="可选属性"><a href="#可选属性" class="headerlink" title="可选属性"></a>可选属性</h3><p>如果有的属性可有可无，此时就可选属性就有用了</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> SquareConfig &#123;</span><br><span class="line">  color?: <span class="built_in">string</span></span><br><span class="line">  width?: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createSquare</span> (<span class="params">config: SquareConfig</span>): </span>&#123;</span><br><span class="line">  color: <span class="built_in">string</span></span><br><span class="line">  area: <span class="built_in">number</span></span><br><span class="line">&#125; &#123;</span><br><span class="line">  <span class="keyword">let</span> defaultSquare = &#123;</span><br><span class="line">    color: <span class="string">'white'</span>,</span><br><span class="line">    area: <span class="number">100</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (config.color) &#123;</span><br><span class="line">    defaultSquare.color = config.color</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (config.width) &#123;</span><br><span class="line">    defaultSquare.area = config.width * config.width</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> defaultSquare</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h3><p>有时我们也想让一些属性开始就初始化，并不能修改</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  readonly id: <span class="built_in">number</span></span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  age?: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="额外属性检查"><a href="#额外属性检查" class="headerlink" title="额外属性检查"></a>额外属性检查</h3><p>上面的例子中说过，接口只允许你添加已定义的属性，少了或者多了都行。如果，你知道还会有其他属性，但并不知道是什么时候，有两种方法绕过：</p>
+<ul>
+<li>赋值给一个变量，利用类型推断</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1 = &#123;</span><br><span class="line">  id: <span class="number">10</span>,</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span> (<span class="params">person: Person</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>, person.name, <span class="string">', age-'</span>, person.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHello(p1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用索引签名</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span></span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">  [propName: <span class="built_in">string</span>]: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span> (<span class="params">person: Person</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span>, person.name, <span class="string">', age-'</span>, person.age)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHello(&#123;</span><br><span class="line">  id: <span class="number">10</span>,</span><br><span class="line">  name: <span class="string">'w3ctalk'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口描述函数"><a href="#接口描述函数" class="headerlink" title="接口描述函数"></a>接口描述函数</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> MyFunction &#123;</span><br><span class="line">  (name: <span class="built_in">string</span>): <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myFunc: MyFunction = <span class="function"><span class="keyword">function</span> (<span class="params">name: <span class="built_in">string</span></span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口继承"><a href="#接口继承" class="headerlink" title="接口继承"></a>接口继承</h3><p>接口可以继承接口，并且可以多继承</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Shape &#123;</span><br><span class="line">  color: <span class="built_in">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> PenStroke &#123;</span><br><span class="line">  penWidth: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Square <span class="keyword">extends</span> Shape, PenStroke &#123;</span><br><span class="line">  sideLength: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> square: Square = &#123;&#125;</span><br><span class="line">square.color = <span class="string">"blue"</span></span><br><span class="line">square.sideLength = <span class="number">10</span></span><br><span class="line">square.penWidth = <span class="number">5.0</span></span><br></pre></td></tr></table></figure>
+
+<p>接口和类有着千丝万缕的关系，下面学完类，在一起回顾~</p>
+<p><strong>欢迎留言讨论 ^_^ ~</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://w3ctalk.com/2019/09/18/tslearning3/" data-id="cktv4vjah0015f6fyvieilk5s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript-Learning/" rel="tag">TypeScript Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/19/tslearning4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TypeScript Learning 4 - 看看类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/16/tslearning2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TypeScript Learning 2 - 打个照面</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!--  -->
+
+
+	<div id="gitalk-container"></div>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://priesttomb.github.io/js/md5.min.js"></script>
+<script type="text/javascript">
+  new Gitalk({
+    clientID: "Iv1.fc5c5c26e585168c",
+    clientSecret: "16d80d74d963d52e09584ce5c50e0e1ad35bcd57",
+    repo: "shenchao890216.github.io",
+    owner: "shenchao890216",
+    admin: "shenchao890216",
+    id: md5(location.pathname),
+    distractionFreeMode: true
+  }).render("gitalk-container")
+</script>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript-Learning/" rel="tag">TypeScript Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/TypeScript-Learning/" style="font-size: 16.67px;">TypeScript Learning</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 20px;">前端</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/17/cssvariables1/">CSS变量初探</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/14/guanlixuexi/">圈外免费课的学习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/10/darkmode/">深色模式探索</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/09/regetwindows/">一块显卡的力量--重回Windows</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/08/arrayremoveduplicates/">数组去重的一些记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+<div class="widget-wrap">
+  <h3 class="widget-title">Links</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="https://abianji.com/" target="_blank">阿比安吉</a>
+        </li>
+      
+        <li>
+          <a href="https://faaaar.github.io/" target="_blank">faaaar</a>
+        </li>
+      
+        <li>
+          <a href="https://mrzhang123.github.io/blog/home/" target="_blank">Mark Zhang Blog</a>
+        </li>
+      
+        <li>
+          <a href="https://coderge.com/articles" target="_blank">coderge</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <ul>
+        <li>2021 &copy; SCRD</li>
+        <li><a target="_blank" rel="noopener" href="https://github.com/shenchao890216" class="github-link"></a></li>
+        <li><a target="_blank" rel="noopener" href="http://weibo.com/w3ctalk?is_all=1" class="weibo-link"></a></li>
+        <li><a target="_blank" rel="noopener" href="https://twitter.com/shenchao890216" class="tw-link"></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/fesources" class="mobile-nav-link">资源</a>
+  
+    <a href="/about" class="mobile-nav-link">关于本站</a>
+  
+</nav>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//cdn.staticfile.org/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
